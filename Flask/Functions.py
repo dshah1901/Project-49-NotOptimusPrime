@@ -8,9 +8,10 @@ import numpy as np
 from TransformerCode import *
 
 
+
 def get_word_list_UA():
 
-    word_list_xls = pd.read_excel("./Flask/speaker_wordlist.xls", sheet_name="Word_filename", header=0)
+    word_list_xls = pd.read_excel("speaker_wordlist.xls", sheet_name="Word_filename", header=0)
     word_dictionary = {}
 
     for i in range(word_list_xls.shape[0]):

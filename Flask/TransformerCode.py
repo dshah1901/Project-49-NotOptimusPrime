@@ -642,7 +642,7 @@ optimizer = keras.optimizers.Adam(learning_rate)
 def predict(models,data):
     model.compile(optimizer=optimizer, loss=loss_fn)
     model.fit(data.take(1), epochs=1, verbose=0)
-    model.load_weights(f'Models\LJSPEECH_NEWHYPER_TransferLearning2_'+models+'.h5')
+    model.load_weights(f'../Models/LJSPEECH_NEWHYPER_TransferLearning2_'+models+'.h5')
     model.compile(optimizer=optimizer, loss=loss_fn)
     prediction = model.get_accuracy(data.take(1))
     return prediction
