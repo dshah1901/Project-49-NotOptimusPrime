@@ -24,17 +24,14 @@ as proposed in the paper, "Attention is All You Need".
 """
 
 
-import os
-import random
+
 from glob import glob
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-# initialisation
-import numpy
 import pandas as pd
 from matplotlib import pyplot as plt
-from UA_Speech_preprocess import *
+# from UA_Speech_preprocess import *
 from jiwer import wer
 """
 ## Define the Transformer Input Layer
@@ -304,7 +301,6 @@ class Transformer(keras.Model):
         for batch in ds_itr:
             score_per_batch, target_per_batch, prediction_per_batch,bs = self.predictions(batch)
 
-
         return prediction_per_batch
 """
 ## Download the dataset
@@ -400,7 +396,7 @@ def create_audio_ds(data):
     return audio_ds
 
 
-def create_tf_dataset(data, bs=4):
+def create_tf_dataset(data, bs=1):
     audio_ds = create_audio_ds(data)
     text_ds = create_text_ds(data)
     ds = tf.data.Dataset.zip((audio_ds, text_ds))
@@ -595,54 +591,12 @@ learning_rate = CustomSchedule(
     steps_per_epoch=1,
 )
 optimizer = keras.optimizers.Adam(learning_rate)
-# model.compile(optimizer=optimizer, loss=loss_fn)
-# #history = model.fit(ds, validation_data=val_ds, callbacks=[display_cb], epochs=2)
-# #loading weights
-# # quick model fit to get input shape for loading weights
-# model.fit(val_ds.take(1), epochs=1, verbose=0)
-# model.load_weights(f'LJSPEECH_NEWHYPER_Lencoderlayer12.h5')
-# model.summary(); 
-# for layers in (model.encoder.layers):
-#     print(layers)
-# print("Layers: \n")
-# for layers in (model.layers):
-#     print(layers)
-# #     # layers.trainable = False
-# # ((model.encoder.layers)[2]).trainable = False
-# # ((model.encoder.layers)[1]).trainable = False
-# # ((model.layers)[8]).trainable = False
-# # ((model.enc_input.conv3)).trainable = False
-# # # ((model.enc_input.conv1)).trainable = False
-# # ((model.encoder.layers)[2]).trainable = False
-# ((model.layers)[8]).trainable = False
-
-# # print(((model.layers)[5]))
-
-# model.compile(optimizer=optimizer, loss=loss_fn)
-# history = model.fit(ds, validation_data=val_ds, callbacks=[display_cb], epochs=100)
-
-
-# # Plot 
-# # Get training and test loss histories
-# training_loss = history.history['loss']
-# test_loss = history.history['val_loss']
-
-# # Create count of the number of epochs
-# epoch_count = range(1, len(training_loss) + 1)
-
-# # Visualize loss history
-# plt.plot(epoch_count, training_loss, 'r--')
-# plt.plot(epoch_count, test_loss, 'b-')
-# plt.legend(['Training Loss', 'Test Loss'])
-# plt.xlabel('Epoch')
-# plt.ylabel('Loss')
-# plt.savefig("training vs loss.png")
-# plt.show()
 
 def predict(models,data):
     model.compile(optimizer=optimizer, loss=loss_fn)
     model.fit(data.take(1), epochs=1, verbose=0)
-    model.load_weights(f'../Models/LJSPEECH_NEWHYPER_TransferLearning2_'+models+'.h5')
+    print("In here")
+    model.load_weights(f'./Models/LJSPEECH_NEWHYPER_TransferLearning2_'+models+'.h5')
     model.compile(optimizer=optimizer, loss=loss_fn)
     prediction = model.get_accuracy(data.take(1))
     return prediction

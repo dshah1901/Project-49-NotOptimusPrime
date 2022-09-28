@@ -5,13 +5,13 @@ from tensorflow import keras
 from tensorflow.keras import layers
 import pandas as pd
 import numpy as np
-from TransformerCode import *
+from . import TransformerCode
 
 
 
 def get_word_list_UA():
 
-    word_list_xls = pd.read_excel("speaker_wordlist.xls", sheet_name="Word_filename", header=0)
+    word_list_xls = pd.read_excel("./Flask/speaker_wordlist.xls", sheet_name="Word_filename", header=0)
     word_dictionary = {}
 
     for i in range(word_list_xls.shape[0]):
@@ -53,8 +53,8 @@ def DataProcess(wavfile):
 
 def predictWord(wavfile,models):
     predict_ds = DataProcess(wavfile)
-    predict_dss = create_tf_dataset(predict_ds, bs =1)
-    actPred = predict(models,predict_dss)
+    predict_dss = TransformerCode.create_tf_dataset(predict_ds, bs =1)
+    actPred = TransformerCode.predict(models,predict_dss)
     return actPred
 
 
