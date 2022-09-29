@@ -25,7 +25,11 @@ def infer_Normalaudio(wav):
         text = r.recognize_google(audio_file)
     
     return text
-
+@app.route("/test",methods = ["GET", "POST"])
+def infer_Normalaudio(wav):
+    text="hello"
+    
+    return text
 
 
 
