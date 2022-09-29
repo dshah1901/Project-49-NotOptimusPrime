@@ -26,7 +26,7 @@ def infer_Normalaudio(wav):
     
     return text
 @app.route("/test",methods = ["GET", "POST"])
-def infer_Normalaudio(wav):
+def infer_Test():
     text="hello"
     
     return text
