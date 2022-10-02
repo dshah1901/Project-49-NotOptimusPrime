@@ -10,13 +10,13 @@ CORS(app)
 r = sr.Recognizer()
 
 
-@app.route("/dysarthric_speech/<wav>")
+@app.route("/dysarthric_speech/<wav>",methods = ["GET", "POST"])
 def infer_audio(wav):
     speaker, block, word_key, mic = wav.split('_')
     pred = Functions.predictWord("./Code/"+wav, speaker)
     return pred
 
-@app.route("/normal_speech/<wav>")
+@app.route("/normal_speech/<wav>",methods = ["GET", "POST"])
 def infer_Normalaudio(wav):
     text=""
     with sr.AudioFile("./Code/"+wav) as source:

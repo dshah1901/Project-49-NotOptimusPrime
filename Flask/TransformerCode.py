@@ -25,13 +25,10 @@ as proposed in the paper, "Attention is All You Need".
 
 
 
-from glob import glob
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 import pandas as pd
-from matplotlib import pyplot as plt
-# from UA_Speech_preprocess import *
 from jiwer import wer
 """
 ## Define the Transformer Input Layer
