@@ -9,7 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.notoptimusprime.adapter.SpeakerAdaptor;
 import com.example.notoptimusprime.model.DataProvider;
+import com.example.notoptimusprime.model.Speaker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Testing the dictionary
-        Map<Integer, String> wordsDict = DataProvider.generateMaoriDigits();
-        List<String> words = new ArrayList<String>(wordsDict.values());
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        List<Speaker> speakerList = DataProvider.getSpeaker();
+        SpeakerAdaptor itemsAdapter = new SpeakerAdaptor(this, R.layout.number_list_view_item, speakerList);
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(itemsAdapter);
 
