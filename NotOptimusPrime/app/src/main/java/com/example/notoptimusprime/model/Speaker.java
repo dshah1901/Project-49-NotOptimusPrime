@@ -1,6 +1,8 @@
 package com.example.notoptimusprime.model;
 
-public class Speaker {
+import java.io.Serializable;
+
+public class Speaker implements Serializable {
     int digit;
     String audioFilename, iconFilename, speakerName, intelligibility, command, originalFileName;
 

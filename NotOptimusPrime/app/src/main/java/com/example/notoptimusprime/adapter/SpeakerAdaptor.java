@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class SpeakerAdaptor extends ArrayAdapter {
+public class SpeakerAdaptor extends ArrayAdapter<Speaker> {
     int mLayoutID;
     List<Speaker> mSpeakers;
     Context mContext;
@@ -68,7 +68,7 @@ public class SpeakerAdaptor extends ArrayAdapter {
 
 
         //Setting the image click handler
-        currentListViewItem.setOnClickListener(new View.OnClickListener() {
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Operations to perform when the play ImageView is clicked

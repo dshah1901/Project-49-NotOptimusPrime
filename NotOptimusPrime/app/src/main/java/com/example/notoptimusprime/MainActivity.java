@@ -1,11 +1,12 @@
 package com.example.notoptimusprime;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+
 
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -13,12 +14,15 @@ import com.example.notoptimusprime.adapter.SpeakerAdaptor;
 import com.example.notoptimusprime.model.DataProvider;
 import com.example.notoptimusprime.model.Speaker;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String SPEAKER_DETAIL_KEY = "speaker";
     Button btn;
+    ListView listView;
+    SpeakerAdaptor itemsAdapter;
+    List<Speaker> speakerList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Testing the dictionary
-        List<Speaker> speakerList = DataProvider.getSpeaker();
-        SpeakerAdaptor itemsAdapter = new SpeakerAdaptor(this, R.layout.number_list_view_item, speakerList);
-        ListView listView = (ListView) findViewById(R.id.list_view);
+        speakerList = DataProvider.getSpeaker();
+        itemsAdapter = new SpeakerAdaptor(this, R.layout.number_list_view_item, speakerList);
+        listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(itemsAdapter);
+        setupSpeakerSelectedListener();
 
         //assign values to each control on the layout
 //        btn = findViewById(R.id.button);
@@ -62,4 +67,15 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        );
  }
+
+    public void setupSpeakerSelectedListener() {
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+                Intent intent = new Intent(MainActivity.this, SpeakerDetailActivity.class);
+                intent.putExtra(SPEAKER_DETAIL_KEY, itemsAdapter.getItem(position));
+                startActivity(intent);
+
+
+        });
+    }
 }
+
