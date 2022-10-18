@@ -33,6 +33,9 @@ public class SpeakerDetailActivity extends AppCompatActivity {
         //Use the book to populate the data into our views
 
         Speaker speaker = (Speaker) thisIntent.getSerializableExtra(MainActivity.SPEAKER_DETAIL_KEY);
+
+        String speakerFilename = speaker.getOriginalFileName();
+
         loadSpeaker(speaker);
     }
 
