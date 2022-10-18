@@ -2,28 +2,43 @@ package com.example.notoptimusprime.model;
 
 public class Speaker {
     int digit;
-    String audioFilename, iconFilename, maoriTranslation;
+    String audioFilename, iconFilename, speakerName, intelligibility, command, originalFileName;
+
+    public String getAudioFilename() {
+        return audioFilename;
+    }
 
     public int getDigit() {
         return digit;
     }
 
-    public String getAudioFilename() {
-        return audioFilename;
+    public String getIntelligibility() {
+        return intelligibility;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public String getOriginalFileName() {
+        return originalFileName;
     }
 
     public String getIconFilename() {
         return iconFilename;
     }
 
-    public String getMaoriTranslation() {
-        return maoriTranslation;
+    public String getSpeakerName() {
+        return speakerName;
     }
 
-    public Speaker(int digit, String audioFilename, String iconFilename, String maoriTranslation) {
+    public Speaker(int digit, String audioFilename, String iconFilename, String speakerName, String intelligibility, String command, String originalFileName) {
         this.digit = digit;
         this.audioFilename = audioFilename;
         this.iconFilename = iconFilename;
-        this.maoriTranslation = maoriTranslation;
+        this.speakerName = speakerName;
+        this.intelligibility = intelligibility;
+        this.command = command;
+        this.originalFileName = originalFileName;
     }
 }

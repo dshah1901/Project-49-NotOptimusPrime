@@ -54,8 +54,13 @@ public class SpeakerAdaptor extends ArrayAdapter {
         //Setting the icon
         iconImageView.setImageResource(i);
 
-        TextView maoriTextView = (TextView) currentListViewItem.findViewById(R.id.maori_text_view);
-        maoriTextView.setText(currentSpeaker.getMaoriTranslation());
+        TextView maoriTextView = (TextView) currentListViewItem.findViewById(R.id.speaker_text);
+        maoriTextView.setText(currentSpeaker.getSpeakerName());
+
+        TextView intelligibilityTextView = (TextView) currentListViewItem.findViewById(R.id.speaker_intelligibility);
+        intelligibilityTextView.setText(currentSpeaker.getIntelligibility());
+        TextView commandTextView = (TextView) currentListViewItem.findViewById(R.id.speaker_command);
+        commandTextView.setText(currentSpeaker.getCommand());
 
         //Getting audio resource id for current Number object
         final String audio = currentSpeaker.getAudioFilename();
