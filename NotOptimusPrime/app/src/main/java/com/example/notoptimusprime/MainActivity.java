@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(itemsAdapter);
 
-
-
         //assign values to each control on the layout
 //        btn = findViewById(R.id.button);
 

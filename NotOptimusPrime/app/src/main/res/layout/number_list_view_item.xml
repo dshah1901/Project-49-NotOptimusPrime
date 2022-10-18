@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardCornerRadius="4dp"
-    android:elevation="4dp"
-    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_height="80sp"
     android:layout_width = "match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,8 +12,8 @@
         android:orientation="horizontal">
         <ImageView
             android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/icon0"
+            android:layout_height="match_parent"
+            android:src="@drawable/icon_female"
             android:id="@+id/icon_image_view"/>
         <TextView
             android:id="@+id/maori_text_view"
@@ -25,9 +25,9 @@
             android:textSize="20sp"/>
         <ImageView
             android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_height="match_parent"
             android:id="@+id/play_button"
-            android:src="@drawable/play"
+            android:src="@drawable/iconplay"
             />
 
 

@@ -8,15 +8,15 @@ import java.util.Map;
 public class DataProvider {
     public static Map<Integer, String> generateMaoriDigits(){
         Map<Integer, String> words = new LinkedHashMap<>();
-        words.put(1, "Tahi");
-        words.put(2, "Rua");
-        words.put(3, "Toru");
-        words.put(4, "Wha");
-        words.put(5, "Rima");
-        words.put(6, "Ono");
-        words.put(7, "Whitu");
-        words.put(8, "Waru");
-        words.put(9, "Iwa");
+        words.put(1, "F02");
+        words.put(2, "F04");
+        words.put(3, "F05");
+        words.put(4, "M01");
+        words.put(5, "M07");
+        words.put(6, "F05");
+        words.put(7, "M19");
+        words.put(8, "F17");
+        words.put(9, "M19");
         return words;
     }
 
@@ -26,7 +26,13 @@ public class DataProvider {
         for (Integer key : speakers.keySet()){
             int digit = key;
             String maoriTranslation = speakers.get(key);
-            String icon = "icon" + String.valueOf(key);
+            String icon;
+            if(maoriTranslation.contains("F")){
+                icon = "icon_female";
+            } else{
+                icon = "icon_male";
+            }
+
             String audio = "audio_" + String.valueOf(key);
 
             Speaker s = new Speaker(digit, audio, icon, maoriTranslation);
