@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SpeakerDetailActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_700"
+        android:padding="10sp"
+        android:text="PROJECT 49: \n\n Using Transformers for Speech Recogniton of Dysarthric Individuals"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="330sp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/speaker_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPEAKER"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/speaker_intelligibility_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTELLIGIBILITY"
+                android:textSize="20sp"/>
+            <TextView
+                android:id="@+id/speaker_command_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COMMANDS"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/play_button"
+            android:src="@drawable/iconplay"
+
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_dysarthric"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+
+        android:text="Predict using our model"
+        />
+    <Button
+        android:id="@+id/button_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Predict using normal Speech recognition"
+        />
+
+</LinearLayout>
