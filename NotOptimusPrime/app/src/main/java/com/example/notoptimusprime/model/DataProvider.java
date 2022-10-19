@@ -49,8 +49,8 @@ public class DataProvider {
         commands.put(1, "F02_B1_C12_M3.wav");
         commands.put(2, "F03_B1_C18_M8.wav");
         commands.put(3, "F04_B1_CW39_M8.wav");
-        commands.put(5, "M01_B1_C4_M6.wav");
         commands.put(4, "M05_B1_CW27_M7.wav");
+        commands.put(5, "M01_B1_C4_M6.wav");
         commands.put(6, "M08_B1_C6_M5.wav");
         commands.put(7, "M09_B1_C16_M2.wav");
         commands.put(8, "M16_B1_CW70_M3.wav");
