@@ -10,7 +10,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:textSize="22sp"
@@ -18,6 +18,16 @@
         android:background="@color/teal_700"
         android:padding="10sp"
         android:text="PROJECT 49: \n\n Using Transformers for Speech Recogniton of Dysarthric Individuals"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_200"
+        android:padding="10sp"
+        android:text=""/>
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

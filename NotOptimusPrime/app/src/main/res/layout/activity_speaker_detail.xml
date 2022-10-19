@@ -27,6 +27,16 @@
         android:text="PROJECT 49: \n\n Using Transformers for Speech Recogniton of Dysarthric Individuals"
         android:textColor="@color/white"
         android:textSize="22sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:background="@color/teal_200"
+        android:padding="10sp"
+        android:text=""/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,27 +44,35 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="330sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="10sp"
+            android:layout_marginBottom="20sp"
+            android:paddingBottom="40sp"
+            android:paddingTop="40sp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/speaker_details"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SPEAKER"
+                android:textAlignment="center"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/speaker_intelligibility_details"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="INTELLIGIBILITY"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/speaker_command_details"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:text="COMMANDS"
                 android:textSize="20sp" />
@@ -66,7 +84,8 @@
     <Button
         android:id="@+id/button_dysarthric"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55sp"
+        android:elevation="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -77,23 +96,27 @@
         android:id="@+id/DysarthricPrediction"
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
         android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/button_normal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55sp"
+        android:elevation="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Predict using normal Speech recognition"
+        android:text="Predict using normal Speech asr"
         android:textColorHighlight="@color/teal_700" />
 
     <TextView
         android:id="@+id/NormalPrediction"
         android:layout_width="match_parent"
         android:layout_height="46dp"
+        android:textSize="18sp"
         android:fontFamily="sans-serif-medium"
         android:gravity="center_horizontal" />
 

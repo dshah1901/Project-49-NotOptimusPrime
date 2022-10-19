@@ -61,14 +61,14 @@ public class DataProvider {
         List<Speaker> speakerList = new ArrayList<Speaker>();
         Map<Integer, String> speakers = generateSpeakers();
         Map<Integer, String> commands = generateCommands();
-        Map<Integer, String> intelligibility = generateIntelligibility();
+        Map<Integer, String> intelligibilities = generateIntelligibility();
         Map<Integer, String> orginalFileName = generateOriginalFileName();
         for (Integer key : speakers.keySet()){
             int digit = key;
-            String speaker = speakers.get(key);
+            String speaker = "Speaker ID: "+ speakers.get(key);
             String icon;
-            String command = commands.get(key);
-            String intellgibility = intelligibility.get(key);
+            String command = "Command Spoken: "+commands.get(key);
+            String intelligibility = "Intelligiblity: "+ intelligibilities.get(key);
             String originalFilename = orginalFileName.get(key);
             if(speaker.contains("F")){
                 icon = "icon_female";
@@ -78,7 +78,7 @@ public class DataProvider {
 
             String audio = "audio_" + String.valueOf(key);
 
-            Speaker s = new Speaker(digit, audio, icon, speaker, command,intellgibility,originalFilename);
+            Speaker s = new Speaker(digit, audio, icon, speaker, command,intelligibility,originalFilename);
             speakerList.add(s);
         }
         return speakerList;
