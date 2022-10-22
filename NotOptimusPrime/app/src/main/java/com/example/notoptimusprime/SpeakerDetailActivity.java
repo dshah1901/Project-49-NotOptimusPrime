@@ -26,10 +26,12 @@ import com.example.notoptimusprime.R;
 import com.example.notoptimusprime.model.Speaker;
 
 public class SpeakerDetailActivity extends AppCompatActivity {
+    String ngrok = "https://ed94-2407-7000-8955-b100-bc00-4e9f-118-f242.au.ngrok.io";
 
     LottieAnimationView lottieAnimationView;
     TextView tvSpeaker, tvIntelligibility, tvCommand, dysarthricPrediction, normalPrediction;
     Button btn, normalSpeechBtn;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +65,7 @@ public class SpeakerDetailActivity extends AppCompatActivity {
                 lottieAnimationView.playAnimation();
                 lottieAnimationView.setVisibility(View.VISIBLE);
                 RequestQueue queue = Volley.newRequestQueue(SpeakerDetailActivity.this);
-                String url = "https://35ed-121-74-165-36.au.ngrok.io/dysarthric_speech/" + speakerFilename;
+                String url = ngrok +"/dysarthric_speech/" + speakerFilename;
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {
                             @Override
@@ -97,7 +99,7 @@ public class SpeakerDetailActivity extends AppCompatActivity {
                 lottieAnimationView.playAnimation();
                 lottieAnimationView.setVisibility(View.VISIBLE);
                 RequestQueue queue = Volley.newRequestQueue(SpeakerDetailActivity.this);
-                String url = "https://35ed-121-74-165-36.au.ngrok.io/normal_speech/" + speakerFilename;
+                String url = ngrok + "/normal_speech/" + speakerFilename;
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                         new Response.Listener<String>() {
                             @Override
