@@ -1,4 +1,8 @@
-# Not Optimus Prime : A ASR for dysarthric individuals using transformers.
+# Project: 49: Not Optimus Prime
+
+ A ASR for dysarthric individuals using transformers. 
+ 
+ Link to [GitHub](https://github.com/dshah1901/Project-49-NotOptimusPrime). 
 
 ## Setup environment
 
