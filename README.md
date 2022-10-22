@@ -8,7 +8,7 @@
 
 The project was executed on Windows and the instructions are for the same.
 
-1. Unzip the file and open Anaconda command and change directory to the root folder.
+1. Unzip the file (or clone the repo) and open Anaconda command and change directory to the root folder.
 
 2. Create a new envoronment on anaconda
 
