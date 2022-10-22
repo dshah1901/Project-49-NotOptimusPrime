@@ -26,7 +26,7 @@ import com.example.notoptimusprime.R;
 import com.example.notoptimusprime.model.Speaker;
 
 public class SpeakerDetailActivity extends AppCompatActivity {
-    String ngrok = "https://ed94-2407-7000-8955-b100-bc00-4e9f-118-f242.au.ngrok.io";
+    String ngrok = "https://ee82-2407-7000-8955-b100-bc00-4e9f-118-f242.au.ngrok.io";
 
     LottieAnimationView lottieAnimationView;
     TextView tvSpeaker, tvIntelligibility, tvCommand, dysarthricPrediction, normalPrediction;

@@ -4,3 +4,4 @@ pandas==1.5.1
 tensorflow==2.10.0
 jiwer==2.5.1
 flask_cors==3.0.10
+xlrd==2.0.1
