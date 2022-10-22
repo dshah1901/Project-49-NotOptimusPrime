@@ -84,6 +84,6 @@ String ngrok = "https://590b-2407-7000-8955-b100-bc00-4e9f-118-f242.au.ngrok.io"
 
 1. You would be able to see different speakers, their gender and their intelligiblity levels. You can aslo run the mdeia and try guessing what the speaker is trying to say.
 
-2. Clicking on the tilte would redirect to the page with imformation about the command.
+2. Clicking on the title would redirect to the page with imformation about the command.
    This page also has option to predict using a normal speech recogniton and using the model proposed in this research.
    The prediction is real time nd thus might take some time.
